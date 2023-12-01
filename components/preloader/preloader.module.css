@@ -1,0 +1,45 @@
+.preloader {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 9999;
+  font-size: 1.5rem;
+}
+
+.icon {
+  width: rem(75px);
+  height: rem(75px);
+  color: white;
+  -webkit-animation: icon 3s linear forwards infinite;
+  animation: icon 3s linear forwards infinite;
+}
+@-webkit-keyframes icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
