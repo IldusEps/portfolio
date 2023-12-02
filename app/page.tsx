@@ -1,25 +1,50 @@
+"use client";
 
 import "./globals.css";
-import { IconCloud, IconCloudBolt, IconCloudRain, IconCloudSnow, IconSun, IconSunElectricity, IconUmbrella } from "@tabler/icons-react";
+import { useState, useEffect } from "react"
+import { IconDeviceMobileMessage, IconHomeHeart, IconMusic, IconSatellite, IconSignal4g, IconSmartHome, IconVolume, IconPlanet } from "@tabler/icons-react";
+import { useDisclosure } from '@mantine/hooks';
+import { AppShell, Flex } from '@mantine/core';
+import Preloader from "@/components/preloader/preloader";
+import Alina from "@/components/Alina/Alina";
+import AlinaIcon from "@/components/Alina/AlinaIcon";
 
-const Icons = [IconSun, IconCloud, IconCloudBolt, IconCloudSnow, IconCloudRain, IconSun, IconSunElectricity, IconCloudBolt, IconCloudSnow, IconUmbrella]
+const Icons = [IconSmartHome, IconDeviceMobileMessage, IconSignal4g, IconSatellite, IconHomeHeart, IconMusic, IconVolume, IconPlanet]
 
 export default function Home() {
-  const mainProps = {
-    display: 'flex',
-    minHeight: '100vh',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: '1rem',
-    backgroundColor: '',
-    //background: `linear-gradient(to bottom,transparent,rgb(255, 255, 255)) rgb(214, 219, 220)`
-  }
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 1500)
+  }, [])
 
-  const cubes = Icons.map((Icon) => (<div className="cube"><Icon className="iconCube" stroke={1.5} /></div>))
+  const cubes = Icons.map((Icon) => (<div className="cubeAlina"><Icon className="iconCube" stroke={1.5} /></div>))
 
   return (
-    <main style={...mainProps} class="cubes">
+    <main class="cubes">
+      {loading && <Preloader children={cubes} />}
+      <AppShell
+        header={{ height: 70 }}
+        style={{ zIndex: 2 }}
+      // padding="md"
+      >
+        {!loading && (
+          <AppShell.Header>
+            <Flex
+              justify="start"
+              align="center"
+              direction="row"
+              wrap="wrap"
+              style={{ height: '100%', padding: 8, paddingLeft: 32 }}
+            >
+              <IconHomeHeart />
+              <AlinaIcon />
+            </Flex>
+          </AppShell.Header>
+        )}
+
+        <AppShell.Main><Alina /></AppShell.Main>
+
+      </AppShell>
     </main >
   );
 }

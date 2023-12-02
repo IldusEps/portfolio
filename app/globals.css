@@ -107,3 +107,107 @@
   margin-top: 25px;
   color: #003298;
 }
+
+.cubeAlina {
+  position: absolute;
+  top: 80vh;
+  left: 50vw;
+  /* width: 10px;
+  height: 10px; */
+  /* border: solid 1px #003298; */
+  transform-origin: top left;
+  transform: scale(3) rotate(0deg) translate(-50%, -50%);
+  -webkit-animation: cubeAlina 5s ease-in forwards infinite;
+  animation: cubeAlina 5s ease-in forwards infinite;
+  border-color: #0051f4;
+}
+.cubeAlina:nth-child(2) {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.cubeAlina:nth-child(3) {
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  left: 75vw;
+  top: 40vh;
+}
+.cubeAlina:nth-child(4) {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  left: 90vw;
+  top: 10vh;
+}
+.cubeAlina:nth-child(5) {
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  left: 10vw;
+  top: 80vh;
+}
+.cubeAlina:nth-child(6) {
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+  left: 50vw;
+  top: 10vh;
+}
+.cubeAlina:nth-child(7) {
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+  left: 10vw;
+  top: 10vh;
+}
+.cubeAlina:nth-child(8) {
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+  left: 90vw;
+  top: 80vh;
+}
+.cubeAlina:nth-child(9) {
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+  left: 10vw;
+  top: 50vh;
+}
+.cubeAlina:nth-child(10) {
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  left: 90vw;
+  top: 50vh;
+}
+
+@-webkit-keyframes cubeAlina {
+  0% {
+    transform: scale(3) translate(-50%, -50%);
+    /* rotate(0deg) */
+    opacity: 1;
+  }
+  50% {
+    transform: scale(5) translate(-50%, -50%);
+    /* rotate(0deg) */
+    opacity: 0;
+  }
+  100% {
+    transform: scale(5) translate(-50%, -50%);
+    /* rotate(960deg)  */
+    opacity: 0;
+  }
+}
+
+@keyframes cubeAlina {
+  0% {
+    transform: scale(3) translate(-50%, -50%);
+    /* rotate(0deg) */
+    opacity: 1;
+  }
+  50% {
+    transform: scale(5) translate(-50%, -50%);
+    /* rotate(0deg) */
+    opacity: 0;
+  }
+  100% {
+    transform: scale(5) translate(-50%, -50%);
+    /* rotate(960deg)  */
+    opacity: 0;
+  }
+}

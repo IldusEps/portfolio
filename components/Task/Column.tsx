@@ -32,20 +32,22 @@ export default function Column({ index = 0, label = "", data = [], setData = (da
 
     return <Grid.Col span={4} key={index} ref={dropRef} >
         {/*  */}
-        <ScrollArea>
-            <Stack>
-                {/* gap={{ base: 3, xs: 'sm', md: 'sm', xl: 30 }} */}
-                <Center>
-                    <Text size="xl" fw={700} c="rgba(13, 2, 2, 1)">{label}</Text>
-                </Center>
-                {(index == 0) && (
-                    <Task plus={1} setData={(data) => setData(data)} />
-                )}
-                {tasks}
-                {(index == 0) && (
-                    <Task plus={2} setData={(data) => setData(data)} />
-                )}
-            </Stack>
-        </ScrollArea>
+        <Stack>
+            {/* gap={{ base: 3, xs: 'sm', md: 'sm', xl: 30 }} */}
+            <Center>
+                <Text size="xl" fw={700} c="rgba(13, 2, 2, 1)">{label}</Text>
+            </Center>
+            {(index == 0) && (
+                <Task plus={1} setData={(data) => setData(data)} />
+            )}
+            <ScrollArea type="auto" h={"100%"} style={{ maxHeight: "100%" }}>
+                <Stack>
+                    {tasks}
+                    {(index == 0) && (
+                        <Task plus={2} setData={(data) => setData(data)} />
+                    )}
+                </Stack>
+            </ScrollArea>
+        </Stack>
     </Grid.Col>
 };
